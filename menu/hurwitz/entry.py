@@ -1,6 +1,6 @@
 from common.commander.switch import are_defaults
 from common.commander.resources import Resources
-from menu.tangent.interface import HurwitzMethod
+from menu.hurwitz.interface import HurwitzMethod
 
 def HurwitzEntry():
     name = 'Hurwitz'

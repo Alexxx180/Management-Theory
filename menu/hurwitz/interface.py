@@ -1,15 +1,14 @@
-from common.flow.texts.tangent import Text
+from common.flow.texts.hurwitz import Text
 from common.commander.switch import View
-from common.flow.canvas.tangent import canvas_from
-from menu.tangent.solutions.functions import tangent, draw
-from menu.tangent.solutions.research import Research
+import menu.hurwitz.solutions
+
 
 """This program takes a linear system's characteristic equation (its coefficients) and checks the system's stability against the Hurwitz stability criterion."""
 
 def HurwitzMethod(name: str, formula: str):
     args: list = from_formula(formula)
 
-    research = Research(name)
+    research = HurwitzResearch(name)
     research.start(args)
 
     text = Text(name)

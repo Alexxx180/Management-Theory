@@ -1,8 +1,8 @@
 import re
 from common.commander.switch import View
-from menu.criteria.solutions import RaussCriteria
-from common.flow.texts.criteria import Text
+from common.flow.texts.rauss import Text
 from common.handlers.input.formula import from_formula
+from menu.rauss.solutions import RaussCriteria
 
 def RaussCriteriaMethod(name: str, formula: str):
     args: list = from_formula(formula)

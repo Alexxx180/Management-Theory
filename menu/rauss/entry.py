@@ -1,6 +1,6 @@
 from common.commander.switch import are_defaults
 from common.commander.resources import Resources
-from menu.division.interface import RaussCriteriaMethod
+from menu.rauss.interface import RaussCriteriaMethod
 
 def RaussEntry(key):
     name = 'Rauss'
