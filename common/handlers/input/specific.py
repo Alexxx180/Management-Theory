@@ -27,16 +27,20 @@ def pair(convert: callable, start: str, end: str):
 
     return (a, b)
 
+def formulas(name: str) -> str:
+    result: str = ''
+    query: callable = lambda: prompt(Resources.Queries[name])[name]
+
+    while result == '': result = query()
+    return result
+
 def setup_input(queries: dict):
     for argument, message in queries.items():
-        Resources.Queries[argument] = [Text(argument, message=message, validate=number)]
+        Resources.Queries[argument] = [Text(argument, message=message)]
+    rauss = 'Rauss'
+    hurwitz = 'Hurwitz'
 
     Resources.Input = {
-        'Division': lambda: listing((float, ('a', 'b')), validate_e),
-        'Tangent': lambda: listing((float, ('a', 'b')), validate_e),
-        'Simpson': lambda b: listing((float, ('a', b)), lambda: pair(float, 'ₐ', 'ᵇ'), validate_e),
-        'Runge': {
-            'A': lambda: listing((float, ('x', 'y', 'h')), lambda: request_n(0, 100)),
-            'B': lambda: listing((float, ('a', 'b', 'x', 'y', 'y’', 'h')), lambda: request_n(0, 100))
-        }
+        rauss: lambda: formulas(rauss),
+        hurwitz: lambda: formulas(hurwitz),
     }

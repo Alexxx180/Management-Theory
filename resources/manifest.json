@@ -5,6 +5,6 @@
     "Texts": "texts/labels",
     "Formula": {
         "Rauss": "formula/rauss",
-        "Hurwitz": "formula/simpson"
+        "Hurwitz": "formula/hurwitz"
     }
 }

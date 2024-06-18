@@ -1,6 +1,6 @@
 from common.drawing.table.table import Table
-from common.handlers.printer import Printer
 from common.handlers.interaction import pause
+from common.handlers.printer import Printer
 from common.commander.resources import Resources
 
 class Text:
@@ -12,19 +12,15 @@ class Text:
         self.p.keys('Formula').args(formula).print()
         self.p.keys('Research').args(initial).print()
 
-    def no_roots(self):
-        self.p.keys('No roots').args().print()
+    def not_stable(self):
+        self.p.keys('Not Stable').args().print()
 
-    def roots(self, result):
-        self.p.keys('Roots').args(result).print()
+    def stable(self, result):
+        self.p.keys('Stable').args(result).print()
 
-    def source(self, roots):
-        fields = self.fields['Source'].copy()
-        Table(fields).rows(roots).show()
+    def source(self, matrix):
+        Table(self.fields.copy()).rows(matrix).show()
         return self
 
-    def result(self, *args):
-        self.p.keys('Result').args(*args).print()
-
-    def pause(self):
-        pause()
+    def pause(self, text: str = ''):
+        pause(text)

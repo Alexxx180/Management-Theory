@@ -1,16 +1,10 @@
 from common.handlers.interaction import ask
-from menu.division.entry import DivisionEntry
-from menu.tangent.entry import TangentEntry
-from menu.gauss.entry import GaussEntry
-from menu.simpson.entry import SimpsonFormulaEntry
-from menu.runge.entry import RungeKuttaEntry
+from menu.rauss.entry import RaussEntry
+from menu.hurwitz.entry import HurwitzEntry
 
 invoke: dict = {
-    'division': DivisionEntry,
-    'tangent': TangentEntry,
-    'gauss': GaussEntry,
-    'simpson': SimpsonFormulaEntry,
-    'runge': RungeKuttaEntry
+    'rauss': RaussEntry,
+    'hurwitz': HurwitzEntry,
 }
 
 def select(query: str, choices: dict, options: dict):
