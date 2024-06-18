@@ -1,0 +1,28 @@
+{
+    "Enabled": "switch/enabled",
+    "Hints": "switch/hints",
+    "Fields": "texts/fields",
+    "Texts": "texts/labels",
+    "Defaults": {
+        "Division": "defaults/division",
+        "Tangent": "defaults/tangent",
+        "Gauss": "defaults/gauss",
+        "Simpson": ["defaults/simpson", 8],
+        "Runge": {
+            "A": ["defaults/runge/a", 15],
+            "B": ["defaults/runge/b", 5]
+        }
+    },
+    "Formula": {
+        "Division": ["formula/division", 15],
+        "Tangent": {
+            "A": ["formula/tangent/a", 15],
+            "B": ["formula/tangent/b", 15]
+        },
+        "Simpson": "formula/simpson",
+        "Runge": {
+            "A": ["formula/runge/a", 15],
+            "B": "formula/runge/b"
+        }
+    }
+}
