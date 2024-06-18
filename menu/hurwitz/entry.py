@@ -10,4 +10,4 @@ def HurwitzEntry():
     else:
         args = Resources.Input[name]()
 
-    HurwitzMethod(key, name, args)
+    HurwitzMethod(name, args)
