@@ -1,13 +1,13 @@
 from common.commander.switch import are_defaults
 from common.commander.resources import Resources
-from menu.tangent.interface import TangentMethod
+from menu.tangent.interface import HurwitzMethod
 
-def TangentEntry(key):
-    name = 'Tangent'
+def HurwitzEntry():
+    name = 'Hurwitz'
 
     if are_defaults():
-        args = Resources.Defaults[name][key]
+        args = Resources.Formula[name]
     else:
         args = Resources.Input[name]()
 
-    TangentMethod(key, name, args)
+    HurwitzMethod(key, name, args)
