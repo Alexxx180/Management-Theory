@@ -2,6 +2,7 @@ from common.drawing.table.table import Table
 from common.handlers.printer import Printer
 from common.handlers.interaction import pause
 from common.commander.resources import Resources
+import numpy as np
 
 class Text:
     def __init__(self, name: str):
@@ -9,7 +10,8 @@ class Text:
         self.p = Printer(name).act(print)
 
     def research(self, formula, initial):
-        self.p.keys('Formula').args(formula).print()
+        if 'p' in formula:
+            self.p.keys('Formula').args(formula).print()
         self.p.keys('Research').args(initial).print()
 
     def not_stable(self):
@@ -19,7 +21,9 @@ class Text:
         self.p.keys('Stable').args(result).print()
 
     def source(self, matrix):
-        Table(self.fields.copy()).rows(matrix).show()
+#self.fields.copy()
+        Table().rows(np.rot90(matrix)).show()
+        Table().rows(matrix).show()
         return self
 
     def result(self, *args):
