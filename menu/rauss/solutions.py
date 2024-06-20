@@ -10,7 +10,7 @@ class RaussCriteria:
         self.matrix = np.zeros((x, self.columns))
 
     def __set(self, edges: list, i: int) -> int:
-        no: int = 1 - i % 2
+        no: int = i % 2
         self.matrix[no][edges[no]] = self.c[i]
         edges[no] += 1
 
@@ -19,23 +19,19 @@ class RaussCriteria:
         for i in range(0, self.count):
             self.__set(edges, i)
 
-    def __formula(self, row1: list, row2: list, j: int, div: float):
-        return row1[0] * row2[j] - row2[0] * row1[j] / div
+    def __formula(self, row1: list, row2: list, j: int) -> float:
+        div: float = 1 if row1[0] == 0 else row1[0]
+        return row2[j] - row2[0] / div * row1[j]
 
     def __calculate(self, i: int):
-        for j in range(1, self.columns):
-            print(i - 2)
-            print(self.matrix)
+        for j in range(0, self.columns - 1):
             row2: list = self.matrix[i - 2]
             row1: list = self.matrix[i - 1]
-            div: float = 1 if row1[0] == 0 else row1[0]
-
-            self.matrix[i][j - 1] = self.__formula(row1, row2, j, div)
+            self.matrix[i][j] = self.__formula(row1, row2, j + 1)
 
     def __main_body(self, rows: int):
-        for i in range(2, rows - 1):
+        for i in range(2, rows):
             self.__calculate(i)
-        self.matrix[rows][0] = self.matrix[rows - 2][1]
 
     def __xor(self, l1: list, l2: list) -> list:
         return [x ^ y for x, y in zip(l1, l2)]
@@ -53,7 +49,7 @@ class RaussCriteria:
         self.LHP: float = (self.count - 1) - self.RHP
 
     def study(self):
-        self.result = all(self.c) == 0
+        #self.result = all(self.c) == 0
         self.__first_rows()
-        self.__main_body(len(self.matrix[0]))
+        self.__main_body(len(self.matrix))
         self.__define_poles()

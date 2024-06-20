@@ -21,8 +21,6 @@ class Text:
         self.p.keys('Stable').args(result).print()
 
     def source(self, matrix):
-#self.fields.copy()
-        Table().rows(np.rot90(matrix)).show()
         Table().rows(matrix).show()
         return self
 
