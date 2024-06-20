@@ -64,6 +64,7 @@ def check_stability(hurwitz_matrix, coefficients):
             return("System is unstable")
     return("System is stable")
 
+"""
 print("If the polynomial of the denominator of the system's characteristic "
       "equation (transfer function is given as: ")
 print("a0*s^n + a1*s^(n-1) + ... + a(n-1)*s + an")
@@ -76,6 +77,9 @@ for x in range (0, degree+1):
 print(coefficients)
 print("To be stable, all of the system's denominator polynomial coefficients "
       "must be greater than zero")
+"""
+
+coefficients = [1, 10, 6, 2]
 matrix=create_hurwitz_matrix(coefficients)
 
 print('Hurwitz Matrix: \n')

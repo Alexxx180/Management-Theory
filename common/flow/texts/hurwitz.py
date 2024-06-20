@@ -18,8 +18,12 @@ class Text:
     def stable(self, result):
         self.p.keys('Stable').args(result).print()
 
-    def source(self, matrix):
-        Table(self.fields.copy()).rows(matrix).show()
+    def queue(self, orders: list):
+        for order in orders:
+            Table().rows(order[0]).show()
+            self.p.keys('Determinant').args(order[1]).print()
+            if len(order) > 2: 
+                self.p.keys(order[2]).args().print()
         return self
 
     def pause(self, text: str = ''):

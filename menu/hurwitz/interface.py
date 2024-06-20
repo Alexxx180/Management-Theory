@@ -14,9 +14,9 @@ def HurwitzMethod(name: str, formula: str):
     criteria.study()
 
     if View('Table', name):
-        text.source(criteria.matrix)
+        text.queue(criteria.orders)
 
-    if criteria.result:
+    if criteria.d >= 0:
         text.stable(criteria)
     else:
         text.not_stable()
