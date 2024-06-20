@@ -8,7 +8,7 @@ class Text:
         self.fields: dict = Resources.Fields[name]
         self.p = Printer(name).act(print)
 
-    def research(self, formula, initial):
+    def formula(self, formula, initial):
         self.p.keys('Formula').args(formula).print()
         self.p.keys('Research').args(initial).print()
 

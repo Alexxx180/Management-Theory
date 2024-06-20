@@ -2,7 +2,6 @@ from common.commander.switch import View
 from common.flow.texts.rauss import Text
 from common.handlers.input.formula import from_formula
 from menu.rauss.solutions import RaussCriteria
-import numpy as np
 
 def RaussCriteriaMethod(name: str, formula: str):
     args: list = from_formula(formula)
