@@ -1,11 +1,6 @@
 {
     "Table": {
-        "Division": true,
-        "Tangent" : true,
-        "Gauss" : true
-    },
-    "Plots": {
-        "Division": true,
-        "Tangent" : false
+        "Rauss": true,
+        "Hurwitz" : true
     }
 }
