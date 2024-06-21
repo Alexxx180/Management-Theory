@@ -4,13 +4,13 @@ Program to demonstrate various stability criteria work
 
 ## Requirements
 
-You can install it all with command
+python 3.1.2
+
+You can install dependencies listed below with command
 
 ```powershell
 PS C:\> .\install.ps1
 ```
-
-python 3.1.2
 
 prettytable 3.9.0
 matplotlib 3.8.2
