@@ -2,7 +2,6 @@ from common.drawing.table.table import Table
 from common.handlers.printer import Printer
 from common.handlers.interaction import pause
 from common.commander.resources import Resources
-import numpy as np
 
 class Text:
     def __init__(self, name: str):
